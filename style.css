@@ -1,5 +1,6 @@
 :root {
     --bg-theme: lightgreen;
+    --bg-theme-l: rgb(192, 248, 192);
 }
 
 * {
@@ -8,7 +9,7 @@
 
 body {
     display: grid;
-    grid-template-columns: 225px 2fr 1fr;
+    grid-template-columns: 220px 2.5fr 1fr;
     grid-template-rows: repeat(5, 1fr);
 
     
@@ -20,7 +21,7 @@ header {
     grid-template-rows: auto 1fr;
 }
 div#top {
-    background-color: var(--bg-theme);
+    background-color: var(--bg-theme-l);
     grid-area: 1 / 1 / 2 / -1;
     display: grid;
     grid-template-rows: subgrid;
@@ -35,17 +36,29 @@ div#top {
     div#top-right {
         grid-area: 1 / 2 / 2 / 3;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-auto-columns: auto;
+        grid-auto-flow: column;
     }
 }
 div#bottom {
     grid-area: 2 / 1 / 3 / -1;
     display: grid;
-    grid-template-rows: subgrid;
-    grid-template-columns: subgrid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: column;
+
+    #bottom-left {
+        display: grid;
+        grid-template-columns: 0.50fr repeat(2, 1fr);
+    }
+    #bottom-right {
+        grid-column: -2 / -1;
+        align-self: end;
+        justify-self: center;
+    }
 }
 
-aside {
+.sidebar {
+    background-color: var(--bg-theme);
     grid-area: 1 / 1 / -1 / 2;
 }
 ul {
