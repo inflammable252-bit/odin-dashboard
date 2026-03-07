@@ -1,13 +1,9 @@
 :root {
     --bg-theme: #65b891;
-    --bg-theme2: #9799CA;
+    --bg-theme2: #e7e8f8;
     --bg-theme3: #BD93D8;
 
     --default-pad: calc(0.4rem + 1vw);
-}
-
-* {
-    border: 1px dotted black;
 }
 
 body {
@@ -18,13 +14,13 @@ body {
 
 }
 header {
+    background-color: var(--bg-theme3);
+    padding: max(0.5vw, 0.5rem) var(--default-pad);
     grid-area: 1 / 2 / 2 / -1;
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-    grid-template-rows: max-content, repeat(3, 1fr);
 }
 div#top {
-    background-color: var(--bg-theme2);
     grid-area: 1 / 1 / 2 / -1;
     display: grid;
     grid-template-rows: subgrid;
@@ -44,7 +40,6 @@ div#top {
     }
 }
 div#bottom {
-    background-color: var(--bg-theme3);
     grid-area: 2 / 1 / 3 / -1;
     display: grid;
     grid-auto-flow: column;
@@ -74,27 +69,31 @@ ul {
     padding: 0;
 }
 main {
+    background-color: var(--bg-theme2);
     padding: var(--default-pad);
+    box-shadow: inset 0px 14px 8px -13px #000000a2;
     grid-area: 2 / 2 / -1 / -1;
     display: grid;
     grid-template-columns: subgrid;
     grid-template-rows: 2em 1fr;
     grid-auto-flow: column;
-
-
 }
 
 .card-wrapper {
     padding: var(--default-pad);
     display: grid;
     gap: 15px;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
     grid-auto-rows: max-content;
 
     article {
-        overflow: auto;
+        background: #ff0000;
+        background: linear-gradient(90deg, var(--bg-theme) 0.5vw, rgba(255, 255, 255, 1) 0.5vw);
         height: 275px;
-        border: 2px solid var(--bg-theme3);
+        overflow: auto;
+        padding: var(--default-pad);
+        border-color: var(--bg-theme3);
+        border-radius: 8px;
     }
 }
 
