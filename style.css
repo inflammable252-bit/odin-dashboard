@@ -1,6 +1,9 @@
 :root {
-    --bg-theme: lightgreen;
-    --bg-theme-l: rgb(192, 248, 192);
+    --bg-theme: #65b891;
+    --bg-theme2: #9799CA;
+    --bg-theme3: #BD93D8;
+
+    --default-pad: calc(0.4rem + 1vw);
 }
 
 * {
@@ -8,20 +11,20 @@
 }
 
 body {
+    height: 100vh;
     display: grid;
-    grid-template-columns: 220px 2.5fr 1fr;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: max(15vw, 275px) 2.5fr max(15vw, 275px);
+    grid-template-rows: max-content 2fr;
 
-    
 }
 header {
     grid-area: 1 / 2 / 2 / -1;
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: max-content, repeat(3, 1fr);
 }
 div#top {
-    background-color: var(--bg-theme-l);
+    background-color: var(--bg-theme2);
     grid-area: 1 / 1 / 2 / -1;
     display: grid;
     grid-template-rows: subgrid;
@@ -41,10 +44,12 @@ div#top {
     }
 }
 div#bottom {
+    background-color: var(--bg-theme3);
     grid-area: 2 / 1 / 3 / -1;
     display: grid;
-    grid-template-columns: 1fr 1fr;
     grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: max-content;
 
     #bottom-left {
         display: grid;
@@ -56,20 +61,43 @@ div#bottom {
         justify-self: center;
     }
 }
-
 .sidebar {
+    padding: var(--default-pad);
+    color: white;
     background-color: var(--bg-theme);
-    grid-area: 1 / 1 / -1 / 2;
+    grid-column: 1/2;
+    grid-row: 1/-1;
 }
 ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-
 main {
+    padding: var(--default-pad);
     grid-area: 2 / 2 / -1 / -1;
-    grid-template: subgrid;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: 2em 1fr;
+    grid-auto-flow: column;
+
+
 }
+
+.card-wrapper {
+    padding: var(--default-pad);
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-auto-rows: max-content;
+
+    article {
+        overflow: auto;
+        height: 275px;
+        border: 2px solid var(--bg-theme3);
+    }
+}
+
+
 
 
