@@ -6,6 +6,9 @@
     --default-pad: calc(0.4rem + 1vw);
 }
 
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 body {
     height: 100vh;
     display: grid;
@@ -62,12 +65,28 @@ div#bottom {
     background-color: var(--bg-theme);
     grid-column: 1/2;
     grid-row: 1/-1;
+    display: grid;
+    grid-auto-rows: max-content;
 }
-ul {
+div#logo-title {
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+.sidebar ul, main>aside ul  {
     list-style: none;
     margin: 0;
     padding: 0;
 }
+
+.sidebar nav {
+    display: grid;
+    grid-template-rows: auto 1fr 2fr
+}
+
+.sidebar nav ul:last-child {
+    grid-row: -2 / -1;
+}
+
 main {
     background-color: var(--bg-theme2);
     padding: var(--default-pad);
@@ -96,6 +115,7 @@ main {
         border-radius: 8px;
     }
 }
+
 
 
 
