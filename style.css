@@ -1,7 +1,7 @@
 :root {
     --bg-theme: #65b891;
     --bg-theme2: #e7e8f8;
-    --bg-theme3: #BD93D8;
+    --bg-theme3: #f8d7ff;
 
     --default-pad: calc(0.4rem + 1vw);
 }
@@ -28,8 +28,12 @@ div#top {
     display: grid;
     grid-template-rows: subgrid;
     grid-template-columns: subgrid;
+
     input {
+        background-color: var(--bg-theme2);
+        border: 1px solid rgba(119, 119, 119, 0.356);
         border-radius: 10px;
+        width: min(75%, 70ch)
     }
     div#top-left {
         grid-area: 1 / 1 / 2 / 2;
@@ -40,6 +44,11 @@ div#top {
         display: grid;
         grid-auto-columns: auto;
         grid-auto-flow: column;
+        justify-items: center;
+    }
+    a {
+        text-decoration: none;
+        font-size: 1.1rem;
     }
 }
 div#bottom {
@@ -47,16 +56,34 @@ div#bottom {
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: max-content;
+    grid-template-rows: min-content;
 
     #bottom-left {
         display: grid;
         grid-template-columns: 0.50fr repeat(2, 1fr);
+        p {
+            font-weight: 500;
+        }
     }
     #bottom-right {
+        max-width: 75%;
         grid-column: -2 / -1;
-        align-self: end;
-        justify-self: center;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: auto;
+        grid-auto-rows: min-content;
+        align-self: center;
+        justify-content: space-evenly;
+        gap: 1vw;
+    }
+    button {
+        background-color: var(--bg-theme);
+        border: 1px none;
+        border-radius: 19px;
+        padding: 0.5rem 1.5rem;
+        width: 6.8rem;
+        color: #FFF;
+        text-align: center;
     }
 }
 .sidebar {
@@ -80,7 +107,7 @@ div#logo-title {
 
 .sidebar nav {
     display: grid;
-    grid-template-rows: auto 1fr 2fr
+    grid-template-rows: auto 1fr 2fr;
 }
 
 .sidebar nav ul:last-child {
@@ -90,7 +117,7 @@ div#logo-title {
 main {
     background-color: var(--bg-theme2);
     padding: var(--default-pad);
-    box-shadow: inset 0px 14px 8px -13px #000000a2;
+    box-shadow: inset 0px 9px 10px -13px #000000a2;
     grid-area: 2 / 2 / -1 / -1;
     display: grid;
     grid-template-columns: subgrid;
