@@ -59,14 +59,19 @@ div#bottom {
     grid-auto-flow: column;
     grid-template-columns: 1.5fr repeat(2, 1fr);
     grid-template-rows: min-content;
-
+   
     #bottom-left {
         display: grid;
-        grid-template-columns: 0.50fr 1fr;
-        
+        grid-template-columns: 0.20fr 0.7fr 1fr;
         p {
             font-weight: 500;
         }
+    }
+     #greeting-group {
+        grid-column: 2/3;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: max-content;
     }
     #bottom-right {
         max-width: 75%;
@@ -119,7 +124,6 @@ div#logo-title {
 
 main {
     background-color: var(--bg-theme2);
-    padding: var(--default-pad);
     box-shadow: inset 0px 9px 10px -13px #000000a2;
     /* min-height: 100vh; */
     grid-area: 2 / 2 / -1 / -1;
@@ -162,6 +166,7 @@ main {
 }
 .side-cards-wrapper {
     padding: var(--default-pad);
+    padding-left: 0;
     grid-column: -1/-2;
     display: grid;
     gap: 15px;
