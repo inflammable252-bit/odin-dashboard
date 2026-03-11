@@ -63,6 +63,7 @@ div#bottom {
     #bottom-left {
         display: grid;
         grid-template-columns: 0.50fr 1fr;
+        
         p {
             font-weight: 500;
         }
@@ -164,7 +165,7 @@ main {
     grid-column: -1/-2;
     display: grid;
     gap: 15px;
-    grid-template-rows: auto 1fr auto 1fr;
+    grid-template-rows: auto 1fr auto minmax(max-content, 0.4fr);
 
     p {
         font-size: 0.75rem;
