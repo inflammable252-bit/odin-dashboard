@@ -7,8 +7,22 @@
     --default-pad: calc(0.4rem + 1vw);
 }
 
-* {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('JosefinSans-ThinItalic.woff2') format('woff2'),
+        url('JosefinSans-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('JosefinSans-Thin.woff2') format('woff2'),
+        url('JosefinSans-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
 }
 body {
     background-color: var(--bg-theme2);
@@ -16,7 +30,7 @@ body {
     display: grid;
     grid-template-columns: max(15vw, 275px);
     grid-template-rows: max-content 1fr;
-
+    font-family: "Josefin Sans", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;;
 }
 header {
     background-color: var(--bg-theme3);
@@ -100,6 +114,7 @@ div#bottom {
     padding: var(--default-pad);
     color: white;
     background-color: var(--bg-theme);
+    font-weight: 500;
     grid-column: 1/2;
     grid-row: 1/-1;
     display: grid;
