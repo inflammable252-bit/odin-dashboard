@@ -30,7 +30,7 @@ body {
     background-color: var(--bg-theme2);
     min-height: 100vh;
     display: grid;
-    grid-template-columns: max(15vw, 275px);
+    grid-template-columns: min-content 1fr;
     grid-template-rows: max-content 1fr;
     font-family: "Josefin Sans", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -163,8 +163,8 @@ div#logo-title {
     grid-template-columns: auto 1fr;
     svg {
         border-radius: 50%;
-        height: 70px;
-        width: 70px;
+        height: 60px;
+        min-width: 60px;
         margin-right: 1vw;
         background: linear-gradient(30deg, rgba(171, 0, 0, 0.87) 49%, rgba(255, 255, 255, 0) 49%);
     }
