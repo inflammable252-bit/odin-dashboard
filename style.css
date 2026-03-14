@@ -75,10 +75,15 @@ div#top {
         text-decoration: none;
         font-size: 1.1rem;
     }
+    img {
+    height: 1.5em;
+    width: 1.5em;
+    }
+    img:first-child {
+        content: url(./icons/bell-svgrepo-com.svg)
+    }
     img:nth-child(2) {
         content: var(--user-icon);
-        height: 35px;
-        min-width: 35px;
         object-fit: cover;
         border-radius: 50%;
     }
@@ -189,6 +194,13 @@ div#logo-title {
     grid-row: -2 / -1;
 }
 
+.sidebar li {
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding-bottom: 0.3em;
+    padding-left: 1em;
+}
+
 main {
     grid-area: 2 / 2 / -1 / -1;
     display: grid;
@@ -286,19 +298,50 @@ main {
     font-weight: 600;
 }
 
-/* nav a::before {
+nav>ul a::before {
+    content:"";
     display: inline-block;
-    width: 20px;
-    #home {
-        content: url("./icons/home.svg")
-    }
-} */
+    width: 1em;
+    height: 1em;
+    background-size: 1em;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 0.1em;
+    right: 0.3em;
+}
+nav>ul a#home::before {
+    background-image: url(./icons/house-svgrepo-com.svg);
+}
 
-li:first-child {
-    display: inline-block;
-    height: 20px;
-    width: 20px;
-    content: url("./icons/card-account-details.png");
+nav>ul a#profile::before {
+    background-image: url(./icons/id-card-svgrepo-com.svg);
+}
+nav>ul a#messages::before {
+    background-image: url(./icons/comment-svgrepo-com.svg);
+}
+nav>ul a#history::before {
+    background-image: url(./icons/book-closed-svgrepo-com.svg);
+}
+nav>ul a#tasks::before {
+    background-image: url(./icons/briefcase-svgrepo-com.svg);
+}
+nav>ul a#communities::before {
+    background-image: url(./icons/thumb-up-svgrepo-com.svg);
+}
+
+nav>ul a#settings::before {
+    background-image: url(./icons/wrench-svgrepo-com.svg);
+}
+nav>ul a#support::before {
+    background-image: url(./icons/phone-handle-svgrepo-com.svg);
+}
+nav>ul a#privacy::before {
+    background-image: url(./icons/lock-svgrepo-com.svg);
+}
+
+nav>ul>li:hover {
+    background-color: red;
+    border-radius: 30px;
 }
 
 a:link {
