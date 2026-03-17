@@ -168,7 +168,7 @@ div#bottom {
     }
 }
 .sidebar {
-    padding: var(--default-pad);
+    padding: calc(2rem + 2vh) var(--default-pad) 0 calc(0.5rem + 0.5vw);
     color: white;
     background-color: var(--bg-theme);
     font-weight: 500;
@@ -176,21 +176,32 @@ div#bottom {
     grid-row: 1/-1;
     display: grid;
     grid-template-rows: auto 1fr;
+    gap: 1.5rem;
 }
 div#logo-title {
-    display: grid;
-    grid-template-columns: auto 1fr;
+    margin-bottom: -4.5rem;
     svg {
         border-radius: 50%;
-        height: 60px;
-        min-width: 60px;
+        height: 105px;
+        width: min-content;
         margin-right: 1vw;
         background: linear-gradient(30deg, rgba(171, 0, 0, 0.87) 49%, rgba(255, 255, 255, 0) 49%);
+        opacity: 100%;
+        position: relative;
+        bottom: 2.9em;
+        left: 25%;
+        z-index: -1;
     }
     h1 {
-        font-size: 1.9em;
+        font-size: 2.2em;
         text-wrap: nowrap;
-        line-height: 1;
+        line-height: 0.9;
+        position: relative;
+        z-index: 1;
+
+        .line:first-child {
+            margin-left: 15%;
+        }
     }
 }
 .sidebar ul, main>aside ul  {
@@ -201,18 +212,18 @@ div#logo-title {
 
 .sidebar nav {
     display: grid;
-    grid-template-rows: auto 1fr 2fr;
+    grid-template-rows: min-content min-content;
+    gap: 2rem;
+    z-index: 2;
 }
-
 .sidebar nav ul:last-child {
     grid-row: -2 / -1;
 }
-
 .sidebar li {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 500;
-    padding-bottom: 0.3em;
     padding-left: 1em;
+    line-height: calc(1.7em + 0.8vh);
 }
 
 main {
@@ -354,8 +365,8 @@ nav>ul a#privacy::before {
 }
 
 nav>ul>li:hover {
-    background-color: red;
-    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.226);
+    border-radius: 16px;
 }
 
 a:link {
