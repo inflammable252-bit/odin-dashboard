@@ -92,10 +92,10 @@ div#top {
             height: 1.5em;
             min-width: 1.5em;
         }
-        img:first-child {
+        a:first-child>img {
             content: url(./icons/bell-svgrepo-com.svg)
         }
-        img:nth-child(2) {
+        a:nth-child(2)>img {
             content: var(--profile-icon);
             object-fit: cover;
             border-radius: 50%;
@@ -210,6 +210,12 @@ div#logo-title {
         .line:first-child {
             margin-left: 15%;
         }
+    }
+    a:visited {
+        color: #FFF;
+    }
+    a:focus-visible {
+        outline: none;
     }
 }
 .sidebar ul, main>aside ul  {
